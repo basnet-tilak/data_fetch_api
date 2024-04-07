@@ -1,9 +1,11 @@
 
 import express from 'express'
 import axios from 'axios';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get('/api/species', async (req, res) => {
   try {
@@ -13,6 +15,6 @@ app.get('/api/species', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch data' });
   }
 });
-app.listen(3000, () => console.log(`Server is running on port 3000`));
+app.listen(5000, () => console.log(`Server is running on port 5000`));
 
 
