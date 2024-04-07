@@ -1,12 +1,9 @@
 
-
-// server.js
-
-const express = require('express');
-const axios = require('axios');
+import express from 'express'
+import axios from 'axios';
 
 const app = express();
-
+app.use(express.json());
 
 app.get('/api/species', async (req, res) => {
   try {
@@ -16,7 +13,6 @@ app.get('/api/species', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch data' });
   }
 });
-
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(3000, () => console.log(`Server is running on port 3000`));
 
 
