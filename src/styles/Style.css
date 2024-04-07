@@ -2,12 +2,11 @@
   text-align: center;
 }
 
-
 .imageList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+
   li{
     display: inline;
   }

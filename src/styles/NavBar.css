@@ -1,0 +1,22 @@
+
+
+#topnav {
+    background-color: #bdbdc9; /* Add a black background color */
+    overflow: hidden; /* Hide any overflowing content */ 
+    border-radius: 10px;
+    
+    /* this  nav-ul is inside the topnav id */
+    #nav-ul li{
+        display: inline;
+        margin-right: 8px; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        #login-id{
+            display: inline;
+            padding-right: 20px;  
+            float: right;
+        }  
+    }
+}
+
+
