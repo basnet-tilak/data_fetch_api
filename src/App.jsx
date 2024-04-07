@@ -1,30 +1,18 @@
 
-import  { useState, useEffect } from 'react';
-import axios from 'axios';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import DataFetchApp from './DataFetchApp';
 
-function  App() {
-  const [species, setSpecies] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/species')
-      .then(response => {
-        setSpecies(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>Species Data</h1>
-      <ul>
-        {species.map((animal, index) => (
-          <li key={index}>{animal.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+const App =()=>{
+  return(
+    <>
+      <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<DataFetchApp/>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+    </>
+  )
 }
-
 export default App;
