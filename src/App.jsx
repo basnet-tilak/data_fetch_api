@@ -1,6 +1,7 @@
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import DataFetchApp from './DataFetchApp';
+import PageNotFound from './pages/PageNotFound';
 
 const App =()=>{
   return(
@@ -8,7 +9,8 @@ const App =()=>{
       <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<DataFetchApp/>} />
+          <Route path="/species" element={<DataFetchApp/>} />
+          <Route path="/*" element={<PageNotFound/>} />
         </Routes>
       </div>
     </BrowserRouter>

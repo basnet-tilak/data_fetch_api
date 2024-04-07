@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-
+import "./styles/Style.css";
 /**
- *  "name": "Addax", "continent": "Africa", "weight": 220, "height": 41, "horns": "Twisted", "picture": 
+ *  "name": "Addax", "continent": "Africa", "weight": 220, "height": 41, "horns": "Twisted", "picture": urls
+ * 
  */
 
 function DataFetchApp() {
@@ -21,20 +22,32 @@ function DataFetchApp() {
   };
 
   return (
-    <div>
+    <div className="imageContainer">
+      <h2>Animals species</h2>
       <ul>
-        {species.map(item =>
-          <li key={item.id}>
-            <div id="imageContainer">
-              <img src={item.picture} />
-              {item.name}
-              {item.continent}
-              {item.weight}
-              {item.height}
-              {item.horns}
-            </div>
-          </li>
-        )}
+        <div className="imageList">
+          {species.map(item =>
+            <li key={item.id}>
+              <div className="image-card">
+                <img src={item.picture} />
+              </div>
+              <div>
+                <p>
+                {"  Name: "}
+                {item.name},
+                {"  Continent: "}
+                {item.continent},
+                {"  Weight: "}
+                {item.weight},
+                {"  Height "}
+                {item.height},
+                {"  Horns: "}
+                {item.horns}
+                </p>
+              </div>
+            </li>
+          )}
+        </div>
       </ul>
     </div>
   );
